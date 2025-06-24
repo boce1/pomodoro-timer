@@ -113,7 +113,7 @@ class Pg_window:
             dict_time = {
                 "study_time" : 30 * 60, # default 30 minutes
                 "rest_time" : 10 * 60, # default 10 minutes
-                "alarm" : "./audio/alarms/alarm.wav" 
+                "alarm" : DEFAULT_ALARM_PATH
             }
 
             with open(self.config_file, "w") as outfile:

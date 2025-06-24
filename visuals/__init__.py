@@ -47,14 +47,14 @@ def display_circle(win, color, background_color, width, height, seconds_remainin
     outer_radius = width // 4 - padding
     center_y = height - outer_radius - padding
     inner_radius = width // 4 - 2*padding
-    
-    start_angle = pi / 2
-    end_angle = pi / 2 - (seconds_set - seconds_remaining) / seconds_set * 2 * pi
 
     pygame.draw.circle(win, color, (center_x, center_y), outer_radius)
     pygame.draw.circle(win, background_color, (center_x, center_y), inner_radius)
 
     if seconds_remaining != seconds_set:
+        start_angle = pi / 2
+        end_angle = pi / 2 - (seconds_set - seconds_remaining) / seconds_set * 2 * pi
+
         segments = (round(seconds_set - seconds_remaining) + 1) * 5
         points = [(center_x, center_y)]
         step = (start_angle - end_angle) / segments

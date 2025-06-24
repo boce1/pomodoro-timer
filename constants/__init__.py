@@ -1,3 +1,5 @@
+from .default_audio import DEFAULT_ALARM_PATH
+
 WIDTH = 400
 HEIGHT = 300
 
