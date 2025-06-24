@@ -15,6 +15,7 @@ WHITE = (255, 255, 255)
 BLUE = (22, 65, 221)
 RED = (255, 0, 0)
 GRAY = (150, 150, 150)
+ORANGE = (255, 165, 0)
 
 FPS = 60
 
@@ -31,5 +32,9 @@ SPRITES = {
     "shadow" : {
         "running" : ".//visuals//shadow//running_shadow",
         "waiting" : ".//visuals//shadow//waiting_shadow"
+    },
+    "tails" : {
+        "running" : ".//visuals//tails//running_tails",
+        "waiting" : ".//visuals//tails//waiting_tails"
     }
 }

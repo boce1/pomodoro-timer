@@ -45,7 +45,9 @@ class Pg_window:
         if self.characters[self.character_index] == "sonic":
             circle_color = BLUE
         elif self.characters[self.character_index] == "shadow":
-            circle_color = RED 
+            circle_color = RED
+        elif self.characters[self.character_index] == "tails":
+            circle_color = ORANGE
 
         self.window.fill(WHITE)
 
