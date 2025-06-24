@@ -1,5 +1,5 @@
 import pygame
-from math import pi
+from math import pi, cos, sin
 from constants import IMAGE_SIZE
 import os
 
@@ -40,9 +40,27 @@ def waiting_display(win, current_tick, width, height, path):
     except pygame.error:
         print(f"Image {index}_w.png missing!")
 
-def display_circle(win, color, width, height, seconds_remaining, seconds_set):
+def display_circle(win, color, background_color, width, height, seconds_remaining, seconds_set):
     padding = 10
+
+    center_x = width // 2
+    outer_radius = width // 4 - padding
+    center_y = height - outer_radius - padding
+    inner_radius = width // 4 - 2*padding
+    
+    start_angle = pi / 2
+    end_angle = pi / 2 - (seconds_set - seconds_remaining) / seconds_set * 2 * pi
+
+    pygame.draw.circle(win, color, (center_x, center_y), outer_radius)
+    pygame.draw.circle(win, background_color, (center_x, center_y), inner_radius)
+
     if seconds_remaining != seconds_set:
-        pygame.draw.arc(win, color, (width // 4 + padding, height - width // 2 + padding, width // 2 - 2 * padding, width // 2 - 2* padding), pi / 2, (pi / 2) - (seconds_set - seconds_remaining) / seconds_set * 2 * pi, width=padding//2)
-    else:
-        pygame.draw.arc(win, color, (width // 4 + padding, height - width // 2 + padding, width // 2 - 2 * padding, width // 2 - 2* padding), pi / 2, 5/2 * pi, width=padding//2)
+        segments = (round(seconds_set - seconds_remaining) + 1) * 5
+        points = [(center_x, center_y)]
+        step = (start_angle - end_angle) / segments
+        for i in range(segments + 1):
+            angle = start_angle + i * step
+            x = center_x - (outer_radius + padding) * cos(angle)
+            y = center_y - (outer_radius + padding) * sin(angle)
+            points.append((x, y))
+        pygame.draw.polygon(win, background_color, points)

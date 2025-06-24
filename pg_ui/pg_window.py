@@ -55,7 +55,7 @@ class Pg_window:
         if self.show_info_window:
             self.info_window.show(self.window)
         else:
-            display_circle(self.window, circle_color, WIDTH, HEIGHT, self.seconds_remaining, self.seconds_set)
+            display_circle(self.window, circle_color, WHITE,WIDTH, HEIGHT, self.seconds_remaining, self.seconds_set)
             if self.timer_stop:
                 waiting_display(self.window, current_tick, WIDTH, HEIGHT, SPRITES[self.characters[self.character_index]]["waiting"])
             else:
