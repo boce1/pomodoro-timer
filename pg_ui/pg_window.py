@@ -110,8 +110,8 @@ class Pg_window:
     def create_file(self):
         if not os.path.exists(self.config_file):
             dict_time = {
-                "study_time" : 30 * 60, # default 30 minutes
-                "rest_time" : 15 * 60, # default 15 minutes
+                "study_time" : DEFAULT_TIME_1[0] * 60, # default 30 minutes
+                "rest_time" : DEFAULT_TIME_1[1] * 60, # default 15 minutes
                 "alarm" : DEFAULT_ALARM_PATH
             }
 

@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import filedialog, ttk, END, font
-from tkinter.ttk import Style
+from tkinter import filedialog, ttk, END
+from constants import DEFAULT_TIME_1, DEFAULT_TIME_2, DEFAULT_TIME_3
 import json
 
 class Config_window:
@@ -114,18 +114,18 @@ class Config_window:
 
 
         # time picker
-        self.button_30_15 = ttk.Button(self.root, text="30/15", width=10, command=self.change_time_30_15)
+        self.button_30_15 = ttk.Button(self.root, text=f"{DEFAULT_TIME_1[0]}/{DEFAULT_TIME_1[1]}", width=10, command=self.change_time_1)
         self.button_30_15.grid(column=0, row=10, padx=0, pady=2)
-        self.button_40_15 = ttk.Button(self.root, text="40/15", width=10, command=self.change_time_40_15)
+        self.button_40_15 = ttk.Button(self.root, text=f"{DEFAULT_TIME_2[0]}/{DEFAULT_TIME_2[1]}", width=10, command=self.change_time_2)
         self.button_40_15.grid(column=1, row=10, padx=0, pady=2)
-        self.button_40_20 = ttk.Button(self.root, text="40/20", width=10, command=self.change_time_40_20)
+        self.button_40_20 = ttk.Button(self.root, text=f"{DEFAULT_TIME_3[0]}/{DEFAULT_TIME_3[1]}", width=10, command=self.change_time_3)
         self.button_40_20.grid(column=2, row=10, padx=0, pady=2)
         # # #
 
         self.choose_alarm = ttk.Button(self.root, text="Select alarm", command=self.select_alarm, width=17)
         self.choose_alarm.grid(column=0, row=12, padx=5, pady=0, columnspan=3)
 
-        self.config_button = ttk.Button(self.root, text="Update Config File", command=self.change_config_button_clicked, width=17)
+        self.config_button = ttk.Button(self.root, text="Update", command=self.change_config_button_clicked, width=17)
         self.config_button.grid(column=0, row=13, padx=5, pady=0, columnspan=3)
 
         self.insert_time_in_cels_when_open(h_study, m_study, s_study, h_rest, m_rest, s_rest)
@@ -179,14 +179,14 @@ class Config_window:
         self.second_spin_box_rest.delete(0, END)
         self.second_spin_box_rest.insert(0, 0)
 
-    def change_time_40_20(self):
-        self.change_time(40, 20)
+    def change_time_1(self):
+        self.change_time(*DEFAULT_TIME_1)
     
-    def change_time_40_15(self):
-        self.change_time(40, 15)
+    def change_time_2(self):
+        self.change_time(*DEFAULT_TIME_2)
 
-    def change_time_30_15(self):
-        self.change_time(30, 15)
+    def change_time_3(self):
+        self.change_time(*DEFAULT_TIME_3)
 
     def select_alarm(self):
         file_path = filedialog.askopenfilename(title="Select Alarm",

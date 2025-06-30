@@ -40,3 +40,7 @@ SPRITES = {
         "waiting" : ".//visuals//tails//waiting_tails"
     }
 }
+
+DEFAULT_TIME_1 = (30, 15)
+DEFAULT_TIME_2 = (40, 15)
+DEFAULT_TIME_3 = (40, 20)
