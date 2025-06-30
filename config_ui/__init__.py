@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import filedialog, ttk, END
+from tkinter import filedialog, ttk, END, font
+from tkinter.ttk import Style
 import json
 
 class Config_window:
@@ -15,6 +16,7 @@ class Config_window:
         center_y = int(screen_height/2 - self.window_height / 2)
         self.root.geometry(f'{self.window_width}x{self.window_height}+{center_x}+{center_y}')
         self.root.resizable(False, False)
+        #self.root.configure(bg='white')
 
         #self.root.attributes('-alpha', 0.95)
         self.root.attributes('-topmost', 1)
@@ -59,32 +61,36 @@ class Config_window:
         s_rest = rest_seconds - h_rest * 3600 - m_rest * 60
         # # # 
 
+        #default_font = font.Font(family="Arial", size=12, weight="bold")
+
+        # Apply the font to all widget types
+        #font.nametofont("TkDefaultFont").configure(family="Arial", size=12, weight="bold")
+        #font.nametofont("TkTextFont").configure(family="Arial", size=12, weight="bold")
+        #font.nametofont("TkButtonFont").configure(family="Arial", size=12, weight="bold")
+
         # study boxes
         # hour
-        study_label = tk.Label(self.root, text="Study time")
+        study_label = ttk.Label(self.root, text="Study time")
         study_label.grid(column=0, row=0, padx=5, pady=0, columnspan=3)
 
-        hour_label = tk.Label(self.root, text="Hours:")
+        hour_label = ttk.Label(self.root, text="Hours:")
         hour_label.grid(column=0, row=1, sticky=tk.EW, padx=5, pady=0)
 
-        hour_current_value = tk.StringVar(value=h_study)
-        self.hour_spin_box_study = tk.Spinbox(self.root, from_=0, to=24, textvariable=hour_current_value)
+        self.hour_spin_box_study = ttk.Spinbox(self.root, from_=0, to=24)
         self.hour_spin_box_study.grid(column=1, row=1, sticky=tk.EW, padx=5, pady=0, columnspan=2)
 
         # minutes
-        minute_label = tk.Label(self.root, text="Minutes:")
+        minute_label = ttk.Label(self.root, text="Minutes:")
         minute_label.grid(column=0, row=2, sticky=tk.EW, padx=5, pady=0)
 
-        minute_current_value = tk.StringVar(value=m_study)
-        self.minute_spin_box_study = tk.Spinbox(self.root, from_=0, to=60, textvariable=minute_current_value)
+        self.minute_spin_box_study = ttk.Spinbox(self.root, from_=0, to=60)
         self.minute_spin_box_study.grid(column=1, row=2, sticky=tk.EW, padx=5, pady=0, columnspan=2)
 
         # seconds
-        seconds_label = tk.Label(self.root, text="Seconds:")
+        seconds_label = ttk.Label(self.root, text="Seconds:")
         seconds_label.grid(column=0, row=3, sticky=tk.EW, padx=5, pady=0)
 
-        second_current_value = tk.StringVar(value=s_study)
-        self.second_spin_box_study = tk.Spinbox(self.root, from_=0, to=60, textvariable=second_current_value)
+        self.second_spin_box_study = ttk.Spinbox(self.root, from_=0, to=60)
         self.second_spin_box_study.grid(column=1, row=3, sticky=tk.EW, padx=5, pady=0, columnspan=2)
         # # #
 
@@ -92,30 +98,27 @@ class Config_window:
         separator.grid(column=0, row=4, columnspan=3, sticky='ew', pady=0)
 
         # rest boxes
-        rest_label = tk.Label(self.root, text="Rest time")
+        rest_label = ttk.Label(self.root, text="Rest time")
         rest_label.grid(column=0, row=5, padx=5, pady=0, columnspan=3)
 
-        hour_label = tk.Label(self.root, text="Hours:")
+        hour_label = ttk.Label(self.root, text="Hours:")
         hour_label.grid(column=0, row=6, sticky=tk.EW, padx=5, pady=0)
 
-        hour_current_value = tk.StringVar(value=h_rest)
-        self.hour_spin_box_rest = tk.Spinbox(self.root, from_=0, to=24, textvariable=hour_current_value)
+        self.hour_spin_box_rest = ttk.Spinbox(self.root, from_=0, to=24)
         self.hour_spin_box_rest.grid(column=1, row=6, sticky=tk.EW, padx=5, pady=0, columnspan=2)
 
         # minutes
-        minute_label = tk.Label(self.root, text="Minutes:")
+        minute_label = ttk.Label(self.root, text="Minutes:")
         minute_label.grid(column=0, row=7, sticky=tk.EW, padx=5, pady=0)
 
-        minute_current_value = tk.StringVar(value=m_rest)
-        self.minute_spin_box_rest = tk.Spinbox(self.root, from_=0, to=60, textvariable=minute_current_value)
+        self.minute_spin_box_rest = ttk.Spinbox(self.root, from_=0, to=60)
         self.minute_spin_box_rest.grid(column=1, row=7, sticky=tk.EW, padx=5, pady=0, columnspan=2)
 
         # seconds
-        seconds_label = tk.Label(self.root, text="Seconds:")
+        seconds_label = ttk.Label(self.root, text="Seconds:")
         seconds_label.grid(column=0, row=8, sticky=tk.EW, padx=5, pady=0)
 
-        second_current_value = tk.StringVar(value=s_rest)
-        self.second_spin_box_rest = tk.Spinbox(self.root, from_=0, to=60, textvariable=second_current_value)
+        self.second_spin_box_rest = ttk.Spinbox(self.root, from_=0, to=60)
         self.second_spin_box_rest.grid(column=1, row=8, sticky=tk.EW, padx=5, pady=0, columnspan=2)
         # # #
 
@@ -123,22 +126,24 @@ class Config_window:
         separator.grid(column=0, row=9, columnspan=3, sticky='ew', pady=2)
 
         # time picker
-        self.button_30_15 = tk.Button(self.root, text="30/15", width=10, command=self.change_time_30_15)
+        self.button_30_15 = ttk.Button(self.root, text="30/15", width=10, command=self.change_time_30_15)
         self.button_30_15.grid(column=0, row=10, padx=0, pady=2)
-        self.button_40_15 = tk.Button(self.root, text="40/15", width=10, command=self.change_time_40_15)
+        self.button_40_15 = ttk.Button(self.root, text="40/15", width=10, command=self.change_time_40_15)
         self.button_40_15.grid(column=1, row=10, padx=0, pady=2)
-        self.button_40_20 = tk.Button(self.root, text="40/20", width=10, command=self.change_time_40_20)
+        self.button_40_20 = ttk.Button(self.root, text="40/20", width=10, command=self.change_time_40_20)
         self.button_40_20.grid(column=2, row=10, padx=0, pady=2)
         # # #
 
         separator = ttk.Separator(self.root, orient='horizontal')
         separator.grid(column=0, row=11, columnspan=3, sticky='ew', pady=2)
 
-        self.choose_alarm = tk.Button(self.root, text="Select alarm", command=self.select_alarm, width=17)
+        self.choose_alarm = ttk.Button(self.root, text="Select alarm", command=self.select_alarm, width=17)
         self.choose_alarm.grid(column=0, row=12, padx=5, pady=0, columnspan=3)
 
-        self.config_button = tk.Button(self.root, text="Update Config File", command=self.change_config_button_clicked, width=17)
+        self.config_button = ttk.Button(self.root, text="Update Config File", command=self.change_config_button_clicked, width=17)
         self.config_button.grid(column=0, row=13, padx=5, pady=0, columnspan=3)
+
+        self.insert_time_in_cels_when_open(h_study, m_study, s_study, h_rest, m_rest, s_rest)
 
     def change_config_button_clicked(self):
         try:
@@ -203,6 +208,21 @@ class Config_window:
                                     initialdir="./audio/alarms", 
                                     filetypes=[("All Files", ("*.mp3", "*.wav")), ("MP3", ("*.mp3")), ("WAV", "*.wav*")])
         self.alarm_path = file_path
+
+    def insert_time_in_cels_when_open(self, h_study, m_study, s_study, h_rest, m_rest, s_rest):
+        self.hour_spin_box_study.delete(0, END)
+        self.hour_spin_box_study.insert(0, h_study)
+        self.minute_spin_box_study.delete(0, END)
+        self.minute_spin_box_study.insert(0, m_study)  
+        self.second_spin_box_study.delete(0, END)
+        self.second_spin_box_study.insert(0, s_study) 
+
+        self.hour_spin_box_rest.delete(0, END)
+        self.hour_spin_box_rest.insert(0, h_rest)
+        self.minute_spin_box_rest.delete(0, END)
+        self.minute_spin_box_rest.insert(0, m_rest)  
+        self.second_spin_box_rest.delete(0, END)
+        self.second_spin_box_rest.insert(0, s_rest)         
 
     def show(self):
         self.root.mainloop()
