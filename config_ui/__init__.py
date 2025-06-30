@@ -61,13 +61,6 @@ class Config_window:
         s_rest = rest_seconds - h_rest * 3600 - m_rest * 60
         # # # 
 
-        #default_font = font.Font(family="Arial", size=12, weight="bold")
-
-        # Apply the font to all widget types
-        #font.nametofont("TkDefaultFont").configure(family="Arial", size=12, weight="bold")
-        #font.nametofont("TkTextFont").configure(family="Arial", size=12, weight="bold")
-        #font.nametofont("TkButtonFont").configure(family="Arial", size=12, weight="bold")
-
         # study boxes
         # hour
         study_label = ttk.Label(self.root, text="Study time")
@@ -94,9 +87,6 @@ class Config_window:
         self.second_spin_box_study.grid(column=1, row=3, sticky=tk.EW, padx=5, pady=0, columnspan=2)
         # # #
 
-        separator = ttk.Separator(self.root, orient='horizontal')
-        separator.grid(column=0, row=4, columnspan=3, sticky='ew', pady=0)
-
         # rest boxes
         rest_label = ttk.Label(self.root, text="Rest time")
         rest_label.grid(column=0, row=5, padx=5, pady=0, columnspan=3)
@@ -122,8 +112,6 @@ class Config_window:
         self.second_spin_box_rest.grid(column=1, row=8, sticky=tk.EW, padx=5, pady=0, columnspan=2)
         # # #
 
-        separator = ttk.Separator(self.root, orient='horizontal')
-        separator.grid(column=0, row=9, columnspan=3, sticky='ew', pady=2)
 
         # time picker
         self.button_30_15 = ttk.Button(self.root, text="30/15", width=10, command=self.change_time_30_15)
@@ -133,9 +121,6 @@ class Config_window:
         self.button_40_20 = ttk.Button(self.root, text="40/20", width=10, command=self.change_time_40_20)
         self.button_40_20.grid(column=2, row=10, padx=0, pady=2)
         # # #
-
-        separator = ttk.Separator(self.root, orient='horizontal')
-        separator.grid(column=0, row=11, columnspan=3, sticky='ew', pady=2)
 
         self.choose_alarm = ttk.Button(self.root, text="Select alarm", command=self.select_alarm, width=17)
         self.choose_alarm.grid(column=0, row=12, padx=5, pady=0, columnspan=3)
