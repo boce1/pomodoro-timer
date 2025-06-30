@@ -192,7 +192,10 @@ class Config_window:
         file_path = filedialog.askopenfilename(title="Select Alarm",
                                     initialdir="./audio/alarms", 
                                     filetypes=[("All Files", ("*.mp3", "*.wav")), ("MP3", ("*.mp3")), ("WAV", "*.wav*")])
-        self.alarm_path = file_path
+        if file_path:
+            self.alarm_path = file_path
+        # self.alarm_path cant be None except audio/alarms is empty
+        # save the old alarm_path if no audio is selected
 
     def insert_time_in_cels_when_open(self, h_study, m_study, s_study, h_rest, m_rest, s_rest):
         self.hour_spin_box_study.delete(0, END)
