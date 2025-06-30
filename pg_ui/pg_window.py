@@ -6,7 +6,6 @@ from constants import *
 import json
 from .button import Button
 from .info_window import Info_window
-from multiprocessing import Process
 
 class Pg_window:
     def __init__(self):
@@ -112,7 +111,7 @@ class Pg_window:
         if not os.path.exists(self.config_file):
             dict_time = {
                 "study_time" : 30 * 60, # default 30 minutes
-                "rest_time" : 10 * 60, # default 10 minutes
+                "rest_time" : 15 * 60, # default 15 minutes
                 "alarm" : DEFAULT_ALARM_PATH
             }
 
