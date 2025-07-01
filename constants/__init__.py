@@ -18,6 +18,7 @@ BLUE = (22, 65, 221)
 RED = (255, 0, 0)
 GRAY = (150, 150, 150)
 ORANGE = (255, 165, 0)
+YELLOW = (255,255,50)
 
 FPS = 60
 
@@ -38,6 +39,10 @@ SPRITES = {
     "tails" : {
         "running" : ".//visuals//tails//running_tails",
         "waiting" : ".//visuals//tails//waiting_tails"
+    },
+    "super_sonic" : {
+        "running" : ".//visuals//super_sonic//running_super_sonic",
+        "waiting" : ".//visuals//super_sonic//waiting_super_sonic"
     }
 }
 
