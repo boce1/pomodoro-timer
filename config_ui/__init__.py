@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, ttk, END
 from constants import DEFAULT_TIME_1, DEFAULT_TIME_2, DEFAULT_TIME_3
 import json
+from path import resource_path
 
 class Config_window:
     def __init__(self):
@@ -21,7 +22,7 @@ class Config_window:
         #self.root.attributes('-alpha', 0.95)
         self.root.attributes('-topmost', 1)
 
-        self.root.iconbitmap('./icon.ico')
+        self.root.iconbitmap(resource_path("icon.ico"))
 
         # rows and columns
         self.root.rowconfigure(0, weight=1)
@@ -45,7 +46,7 @@ class Config_window:
         # # #
 
         # read from the config file
-        with open("./config.json", "r") as file:
+        with open(resource_path("config.json"), "r") as file:
             content = file.read()
             data = json.loads(content)
 
@@ -161,7 +162,7 @@ class Config_window:
             "alarm" : self.alarm_path
         }
 
-        with open("config.json", "w") as outfile:
+        with open(resource_path("config.json"), "w") as outfile:
             json.dump(dict_time, outfile)
 
     def change_time(self, minutes_study, munites_rest):
@@ -190,7 +191,7 @@ class Config_window:
 
     def select_alarm(self):
         file_path = filedialog.askopenfilename(title="Select Alarm",
-                                    initialdir="./audio/alarms", 
+                                    initialdir=resource_path("audio", "alarms"), 
                                     filetypes=[("All Files", ("*.mp3", "*.wav")), ("MP3", ("*.mp3")), ("WAV", "*.wav*")])
         if file_path:
             self.alarm_path = file_path

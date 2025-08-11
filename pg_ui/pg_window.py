@@ -6,6 +6,7 @@ from constants import *
 import json
 from .button import Button
 from .info_window import Info_window
+from path import resource_path 
 
 class Pg_window:
     def __init__(self):
@@ -14,7 +15,7 @@ class Pg_window:
         pygame.mixer.init()
 
         self.font1 = pygame.font.SysFont("Consolas", HEIGHT // 10)
-        self.icon = pygame.image.load("icon.ico")
+        self.icon = pygame.image.load(resource_path("icon.ico"))
 
         self.window = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption("Pomodoro")
@@ -28,7 +29,7 @@ class Pg_window:
         self.timer_stop = True
         self.alarm_path = None
         self.session = True # True for study session || False for pause session
-        self.config_file = "config.json"
+        self.config_file = resource_path("config.json")
 
         self.character_index = 0
         self.characters = tuple(SPRITES.keys())

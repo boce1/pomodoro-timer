@@ -1,7 +1,8 @@
 import os
 from random import choice
+from path import resource_path
 
-folder_path = ".\\audio\\alarms"
+folder_path = resource_path("audio", "alarms")
 DEFAULT_ALARM_PATH = None 
 
 items = os.listdir(folder_path)

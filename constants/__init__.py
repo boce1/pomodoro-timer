@@ -1,4 +1,5 @@
 from .default_audio import DEFAULT_ALARM_PATH
+from path import resource_path
 
 WIDTH = 400
 HEIGHT = 300
@@ -29,20 +30,20 @@ BUTTON_HEIGHT = BUTTON_WIDTH
 
 SPRITES = {
     "sonic" : {
-        "running" : ".//visuals//sonic//running_sonic",
-        "waiting" : ".//visuals//sonic//waiting_sonic"
+        "running" : resource_path("visuals", "sonic", "running_sonic"),
+        "waiting" : resource_path("visuals", "sonic", "waiting_sonic")
     },
     "shadow" : {
-        "running" : ".//visuals//shadow//running_shadow",
-        "waiting" : ".//visuals//shadow//waiting_shadow"
+        "running" : resource_path("visuals", "shadow", "running_shadow"),
+        "waiting" : resource_path("visuals", "shadow", "waiting_shadow")
     },
     "tails" : {
-        "running" : ".//visuals//tails//running_tails",
-        "waiting" : ".//visuals//tails//waiting_tails"
+        "running" : resource_path("visuals", "tails", "running_tails"),
+        "waiting" : resource_path("visuals", "tails", "waiting_tails")
     },
     "super_sonic" : {
-        "running" : ".//visuals//super_sonic//running_super_sonic",
-        "waiting" : ".//visuals//super_sonic//waiting_super_sonic"
+        "running" : resource_path("visuals", "super_sonic", "running_super_sonic"),
+        "waiting" : resource_path("visuals", "super_sonic", "waiting_super_sonic")
     }
 }
 

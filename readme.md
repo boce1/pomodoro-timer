@@ -45,6 +45,11 @@ pip install pygame
 ```
 
 ## How to run
+
+### User can install the apllication with ```config.json```
+
+### or run it in the terminal
+
 ### For linux distros
 ```bash
 python3 main.py

@@ -4,3 +4,6 @@
 /config_ui/__pycache__
 /build
 /dist
+*.spec
+/venv
+/__pycache__
