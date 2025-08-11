@@ -46,7 +46,7 @@ pip install pygame
 
 ## How to run
 
-### User can install the apllication with ```config.json```
+### User can install the apllication from this link https://drive.google.com/file/d/15Wf-xcsbNn8_9HU-xR0Qg0n2hRpA5UJM/view?usp=sharing
 
 ### or run it in the terminal
 
