@@ -48,6 +48,8 @@ pip install pygame
 
 ### User can install the apllication from this link https://drive.google.com/file/d/15Wf-xcsbNn8_9HU-xR0Qg0n2hRpA5UJM/view?usp=sharing
 
+NOTE: If the program is runned from the wizzard, the state of the timer and selected alarm will be reseted every time program starts, because everytime environment with temporary files is created. If user wants to save the state, the sollution is running it from the terminal or creating a shortcut or symlink.
+
 ### or run it in the terminal
 
 ### For linux distros
