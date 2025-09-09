@@ -1,4 +1,5 @@
 import tkinter as tk
+import _tkinter
 from tkinter import filedialog, ttk, END
 from constants import DEFAULT_TIME_1, DEFAULT_TIME_2, DEFAULT_TIME_3
 import json
@@ -22,7 +23,12 @@ class Config_window:
         #self.root.attributes('-alpha', 0.95)
         self.root.attributes('-topmost', 1)
 
-        self.root.iconbitmap(resource_path("icon.ico"))
+        # self.root.iconbitmap(resource_path("icon.ico"))
+        try:
+            icon = tk.PhotoImage(file=resource_path("icon.ico"))  # Use a PNG file
+            self.root.iconphoto(True, icon)
+        except _tkinter.TclError:
+            print("Error couldnt load the icon.")
 
         # rows and columns
         self.root.rowconfigure(0, weight=1)

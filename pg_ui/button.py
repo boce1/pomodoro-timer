@@ -13,10 +13,10 @@ class Button:
         self.color = color
         self.actual_color = color
 
-        info_icon = pg.image.load(resource_path(f".\\visuals\\info\\info.png"))
+        info_icon = pg.image.load(resource_path(f"visuals/info/info.png"))
         self.info_icon = pg.transform.scale(info_icon, (self.width, self.height))
 
-        x_icon = pg.image.load(resource_path(f".\\visuals\\info\\x.png"))
+        x_icon = pg.image.load(resource_path(f"visuals/info/x.png"))
         self.x_icon = pg.transform.scale(x_icon, (self.width, self.height))
 
     def draw(self, win, cond=False):

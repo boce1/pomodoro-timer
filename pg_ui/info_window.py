@@ -7,28 +7,28 @@ class Info_window:
         self.x = WIDTH // 2 - INFO_WIDTH // 2
         self.y = HEIGHT // 2 - INFO_HEIGHT // 4
 
-        left_arrow = pygame.image.load(resource_path(f".\\visuals\\info\\left_arrow.png"))
+        left_arrow = pygame.image.load(resource_path(f"visuals/info/left_arrow.png"))
         self.left_arrow = pygame.transform.scale(left_arrow, (KEY_WIDTH, KEY_HEIGHT))
 
-        right_arrow = pygame.image.load(resource_path(f".\\visuals\\info\\right_arrow.png"))
+        right_arrow = pygame.image.load(resource_path(f"visuals/info/right_arrow.png"))
         self.right_arrow = pygame.transform.scale(right_arrow, (KEY_WIDTH, KEY_HEIGHT))
 
-        up_arrow = pygame.image.load(resource_path(f".\\visuals\\info\\up_arrow.png"))
+        up_arrow = pygame.image.load(resource_path(f"visuals/info/up_arrow.png"))
         self.up_arrow = pygame.transform.scale(up_arrow, (KEY_WIDTH, KEY_HEIGHT))
 
-        down_arrow = pygame.image.load(resource_path(f".\\visuals\\info\\down_arrow.png"))
+        down_arrow = pygame.image.load(resource_path(f"visuals/info/down_arrow.png"))
         self.down_arrow = pygame.transform.scale(down_arrow, (KEY_WIDTH, KEY_HEIGHT))
 
-        i_key = pygame.image.load(resource_path(f".\\visuals\\info\\i_key.png"))
+        i_key = pygame.image.load(resource_path(f"visuals/info/i_key.png"))
         self.i_key = pygame.transform.scale(i_key, (KEY_WIDTH, KEY_HEIGHT))
 
-        esc_key = pygame.image.load(resource_path(f".\\visuals\\info\\esc_key.png"))
+        esc_key = pygame.image.load(resource_path(f"visuals/info/esc_key.png"))
         self.esc_key = pygame.transform.scale(esc_key, (KEY_WIDTH, KEY_HEIGHT))
 
-        space = pygame.image.load(resource_path(f".\\visuals\\info\\space.png"))
+        space = pygame.image.load(resource_path(f"visuals/info/space.png"))
         self.space = pygame.transform.scale(space, (SPACE_KEY_WIDTH, KEY_HEIGHT))
 
-        enter = pygame.image.load(resource_path(f".\\visuals\\info\\enter.png"))
+        enter = pygame.image.load(resource_path(f"visuals/info/enter.png"))
         self.enter = pygame.transform.scale(enter, (ENTER_KEY_WIDTH, ENTER_KEY_HIGHT))
 
         pygame.font.init()
