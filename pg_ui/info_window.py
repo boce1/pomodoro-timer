@@ -35,7 +35,7 @@ class Info_window:
         font = pygame.font.SysFont("Consolas", INFO_HEIGHT // 15)
         self.first_row_msg = font.render("Change sessions", True, BLACK)
         self.second_row_msg = font.render("Change character", True, BLACK)
-        self.third_row_msg = font.render("Open/close info window", True, BLACK)
+        self.third_row_msg = font.render("Open/close InfoWindow", True, BLACK)
         self.forth_row_msg = font.render("Open config window", True, BLACK)
         self.fifth_row_msg = font.render("Pause/resume", True, BLACK)
         self.sixth_row_msg = font.render("Restart timer", True, BLACK)
