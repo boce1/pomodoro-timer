@@ -45,6 +45,8 @@ class Config_window:
         self.root.rowconfigure(11, weight=1)
         self.root.rowconfigure(12, weight=1)
         self.root.rowconfigure(13, weight=1)
+        self.root.rowconfigure(14, weight=1)
+        self.root.rowconfigure(15, weight=1)
 
         self.root.columnconfigure(0, weight=1)
         self.root.columnconfigure(1, weight=1)
@@ -132,8 +134,14 @@ class Config_window:
         self.choose_alarm = ttk.Button(self.root, text="Select alarm", command=self.select_alarm, width=17)
         self.choose_alarm.grid(column=0, row=12, padx=5, pady=0, columnspan=3)
 
-        self.config_button = ttk.Button(self.root, text="Update", command=self.change_config_button_clicked, width=17)
+        self.config_button = ttk.Button(self.root, text="Update the config file", command=self.change_config_button_clicked, width=25)
         self.config_button.grid(column=0, row=13, padx=5, pady=0, columnspan=3)
+
+        info_label1 = ttk.Label(self.root, text="To update the timer, update the config file,")
+        info_label1.grid(column=0, row=14, padx=5, pady=0, columnspan=3)
+
+        info_label2 = ttk.Label(self.root, text="focus the main window and press ENTER")
+        info_label2.grid(column=0, row=15, padx=5, pady=0, columnspan=3)
 
         self.insert_time_in_cels_when_open(h_study, m_study, s_study, h_rest, m_rest, s_rest)
 
