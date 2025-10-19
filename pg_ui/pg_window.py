@@ -7,6 +7,7 @@ import json
 from .button import Button
 from .info_window import Info_window
 from path import resource_path 
+import threading
 
 class Pg_window:
     def __init__(self):
@@ -160,15 +161,19 @@ class Pg_window:
     def edit_file(self, event):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                self.timer_stop = True
-                self.session = True
-                self.seconds_set = self.study_seconds
-                self.seconds_remaining = self.seconds_set
+                # self.timer_stop = True
+                # self.session = True
+                # self.seconds_set = self.study_seconds
+                # self.seconds_remaining = self.seconds_set
                 pygame.mixer.music.stop()
 
                 self.create_file()
                 Config_window().show()
-                self.read_file()
+                # self.read_file()
+                self.timer_stop = True
+                # self.session = True
+                # self.seconds_set = self.study_seconds
+                # self.seconds_remaining = self.seconds_set
 
     def play_alarm(self):
         if self.alarm_path:
@@ -212,7 +217,10 @@ class Pg_window:
                 self.toogle_timer(event)
                 self.restart_timer(event)
                 self.switch_session(event)
-                self.edit_file(event)
+                t = threading.Thread(target=self.edit_file, args=(event,))
+
+                t.start()
+                #self.edit_file(event)
                 self.change_character(event)
 
                 if self.info_button.is_shorcut_pressed(event) or self.info_button.is_clicked(event, mouse_pos):

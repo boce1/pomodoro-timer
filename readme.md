@@ -32,7 +32,7 @@ There's also animations with sonic sprites.
 3. There 3 buttons than change states of the spinboxes. They represent 3 default time stamps.
 4. Button **"Select alarm"** opens file dialog that allows the user to choose .mv or .mp3 file for alarm
 5. Changes are only made after clicking the **"Update"** button
-**NOTE: When the popup window has been opened, the state of the timer in main window will be lost.**
+**NOTE: To update the timer after writing the cahnages press ENTER in the main window.**
 
 if ```config.json``` is deleted, program generate this file with default configuration.
 
@@ -45,13 +45,6 @@ pip install pygame
 ```
 
 ## How to run
-
-### User can install the apllication from this link https://drive.google.com/file/d/15Wf-xcsbNn8_9HU-xR0Qg0n2hRpA5UJM/view?usp=sharing
-
-NOTE: If the program is runned from the wizzard, the state of the timer and selected alarm will be reseted every time program starts, because everytime environment with temporary files is created. If user wants to save the state, the sollution is running it from the terminal or creating a shortcut or symlink.
-
-### or run it in the terminal
-
 ### For linux distros
 ```bash
 python3 main.py
