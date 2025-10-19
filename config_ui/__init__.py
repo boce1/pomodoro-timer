@@ -20,12 +20,12 @@ class Config_window:
         self.root.resizable(False, False)
         #self.root.configure(bg='white')
 
-        #self.root.attributes('-alpha', 0.95)
+        self.root.attributes('-alpha', 0.97)
         self.root.attributes('-topmost', 1)
 
         # self.root.iconbitmap(resource_path("icon.ico"))
         try:
-            icon = tk.PhotoImage(file=resource_path("icon.ico"))  # Use a PNG file
+            icon = tk.PhotoImage(file=resource_path("icon.png"))  # Use a PNG file
             self.root.iconphoto(True, icon)
         except _tkinter.TclError:
             print("Error couldnt load the icon.")
