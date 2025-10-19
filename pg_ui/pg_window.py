@@ -161,16 +161,12 @@ class Pg_window:
     def edit_file(self, event):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                # self.timer_stop = True
-                # self.session = True
-                # self.seconds_set = self.study_seconds
-                # self.seconds_remaining = self.seconds_set
                 pygame.mixer.music.stop()
 
                 self.create_file()
                 Config_window().show()
                 # self.read_file()
-                self.timer_stop = True
+                # self.timer_stop = True
                 # self.session = True
                 # self.seconds_set = self.study_seconds
                 # self.seconds_remaining = self.seconds_set
