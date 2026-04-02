@@ -51,7 +51,7 @@ class Config_window:
             self.alarm_path = data.get("alarm", "")
 
         # UI - Study Time Section
-        ttk.Label(self.root, text="Study Time", font=('Helvetica', 10, 'bold')).grid(row=0, column=0, columnspan=3)
+        ttk.Label(self.root, text="Study Time", font=('Consolas', 10, 'bold')).grid(row=0, column=0, columnspan=3)
         
         ttk.Label(self.root, text="Hours:").grid(row=1, column=0, sticky=tk.W, padx=10)
         self.hour_spin_box_study = ttk.Spinbox(self.root, from_=0, to=24)
@@ -66,7 +66,7 @@ class Config_window:
         self.second_spin_box_study.grid(row=3, column=1, columnspan=2, sticky=tk.EW, padx=5)
 
         # UI - Rest Time Section
-        ttk.Label(self.root, text="Rest Time", font=('Helvetica', 10, 'bold')).grid(row=4, column=0, columnspan=3, pady=(10, 0))
+        ttk.Label(self.root, text="Rest Time", font=('Consolas', 10, 'bold')).grid(row=4, column=0, columnspan=3, pady=(10, 0))
 
         ttk.Label(self.root, text="Hours:").grid(row=5, column=0, sticky=tk.W, padx=10)
         self.hour_spin_box_rest = ttk.Spinbox(self.root, from_=0, to=24)
@@ -94,8 +94,8 @@ class Config_window:
         self.config_button.grid(row=10, column=0, columnspan=3, pady=5, padx=20, sticky=tk.EW)
 
         # Info Labels
-        ttk.Label(self.root, text="After updating, focus main window", font=("Arial", 7)).grid(row=11, column=0, columnspan=3)
-        ttk.Label(self.root, text="and press ENTER to refresh timer", font=("Arial", 7)).grid(row=12, column=0, columnspan=3)
+        ttk.Label(self.root, text="After updating, focus main window", font=("Consolas", 7)).grid(row=11, column=0, columnspan=3)
+        ttk.Label(self.root, text="and press ENTER to refresh timer", font=("Consolas", 7)).grid(row=12, column=0, columnspan=3)
 
         # Initialize boxes with current data
         self.fill_boxes(*self.split_seconds(study_seconds), *self.split_seconds(rest_seconds))
