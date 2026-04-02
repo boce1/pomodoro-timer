@@ -73,10 +73,15 @@ if config.json is deleted, program generate this file with default configuration
 ## Screenshots
 
 - Main Window
+
 ![main](./readme_pics/main_screen_repo.PNG)
 
+
 - Keyboard Controls Info Window
+
 ![info](./readme_pics/info_screen_repo.PNG)
 
+
 - Config Window (This screenshot is from previous version)
+
 ![config](./readme_pics/config_window_repo.PNG)
