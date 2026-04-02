@@ -6,24 +6,24 @@ There's also animations with sonic sprites.
 
 ## Features
 
-Two configurable session types: Study and Rest
-Session navigation with arrow keys 
-Timer control with spacebar (pause and resume)
-Customizable session durations via pop up window by pressing ESC
-Sonic animations. Running in study session. Waiting in rest session. There is also animation with Shadow, Tails and Super Sonic
-Option for changing the character on the screen
-Dissapiring circle indicating how much time until timer stops
-Option for selecting an audio file wich will be played after the session is finished
-Button that can open a "window" for info about keyboard controls
+1. Two configurable session types: Study and Rest
+2. Session navigation with arrow keys 
+3. Timer control with spacebar (pause and resume)
+4. Customizable session durations via pop up window by pressing `ESC`
+5. Sonic animations. Running in study session. Waiting in rest session. There is also animation with Shadow, Tails and Super Sonic
+6. Option for changing the character on the screen
+7. Dissapiring circle indicating how much time until timer stops
+8. Option for selecting an audio file wich will be played after the session is finished
+9. Button that can open a "window" for info about keyboard controls
 
 ## Controls
 
-Left/Right Arrow Keys: Switch between Study and Rest sessions
-Up/Down Arrow Keys: Change character
-Spacebar: Start/Stop timer
-Escape: Open the configuration window
-Enter: Restart Timer and load updated times stamps from configuration file
-I: Open/Close window for keyboard controls
+- `Left/Right Arrow Keys`: Switch between Study and Rest sessions
+- `Up/Down Arrow Keys`: Change character
+- `Spacebar`: Start/Stop timer
+- `Escape`: Open the configuration window
+- `Enter`: Restart Timer and load updated times stamps from configuration file
+- `I`: Open/Close window for keyboard controls
 
 ## Installation and Setup
 
@@ -61,10 +61,10 @@ python main.py
 
 ## Changing Time Stamps
 
-- Press ESCAPE to open configuration window
+- Press `ESCAPE` to open configuration window
 - Edit session durations as needed. NOTE: Time greater than 24 hours will be reduced to 24 hours
 - Use the Preset Dropdown to quickly select default time configurations
-- Button "Select alarm" opens file dialog that allows the user to choose .wav or .mp3 file for alarm
+- Button `Select alarm` opens file dialog that allows the user to choose .wav or .mp3 file for alarm
 - Changes are only made after clicking the `Update Config File` button
 - NOTE: To update the timer after writing the changes press ENTER in the main window.
 
