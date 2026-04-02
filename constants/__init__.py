@@ -28,25 +28,31 @@ IMAGE_SIZE = (5 * HEIGHT // 12, HEIGHT // 2)
 BUTTON_WIDTH = WIDTH // 15
 BUTTON_HEIGHT = BUTTON_WIDTH
 
+SONIC = 0
+SHADOW = 1
+TAILS = 2
+SUPER_SONIC = 3
+
 SPRITES = {
-    "sonic" : {
+    SONIC : {
         "running" : resource_path("visuals", "sonic", "running_sonic"),
         "waiting" : resource_path("visuals", "sonic", "waiting_sonic")
     },
-    "shadow" : {
+    SHADOW : {
         "running" : resource_path("visuals", "shadow", "running_shadow"),
         "waiting" : resource_path("visuals", "shadow", "waiting_shadow")
     },
-    "tails" : {
+    TAILS : {
         "running" : resource_path("visuals", "tails", "running_tails"),
         "waiting" : resource_path("visuals", "tails", "waiting_tails")
     },
-    "super_sonic" : {
+    SUPER_SONIC : {
         "running" : resource_path("visuals", "super_sonic", "running_super_sonic"),
         "waiting" : resource_path("visuals", "super_sonic", "waiting_super_sonic")
     }
 }
 
-DEFAULT_TIME_1 = (30, 15)
-DEFAULT_TIME_2 = (40, 15)
-DEFAULT_TIME_3 = (40, 20)
+DEFAULT_TIME_1 = (30, 10)
+DEFAULT_TIME_2 = (30, 15)
+DEFAULT_TIME_3 = (40, 15)
+DEFAULT_TIME_4 = (40, 20)

@@ -1,1 +1,5 @@
-{"study_time": 1800, "rest_time": 900, "alarm": "D:/code/pomodoro/audio/alarms/Japan.mp3"}
+{
+    "study_time": 1800,
+    "rest_time": 600,
+    "alarm": "/home/boki/code/pomodoro-timer/audio/alarms/The economy is now (whistle).mp3"
+}

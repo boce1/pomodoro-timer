@@ -33,7 +33,7 @@ class Pg_window:
         self.config_file = resource_path("config.json")
 
         self.character_index = 0
-        self.characters = tuple(SPRITES.keys())
+        self.characters = (SONIC, SHADOW, TAILS, SUPER_SONIC)
 
         gap = 10
         self.info_button = Button(WIDTH - BUTTON_WIDTH - gap, gap, BUTTON_WIDTH, BUTTON_HEIGHT, pygame.K_i)
@@ -43,13 +43,13 @@ class Pg_window:
 
     def draw_scene(self, current_tick):
         circle_color = None
-        if self.characters[self.character_index] == "sonic":
+        if self.characters[self.character_index] == SONIC:
             circle_color = BLUE
-        elif self.characters[self.character_index] == "shadow":
+        elif self.characters[self.character_index] == SHADOW:
             circle_color = RED
-        elif self.characters[self.character_index] == "tails":
+        elif self.characters[self.character_index] == TAILS:
             circle_color = ORANGE
-        elif self.characters[self.character_index] == "super_sonic":
+        elif self.characters[self.character_index] == SUPER_SONIC:
             circle_color = YELLOW
 
         self.window.fill(WHITE)
